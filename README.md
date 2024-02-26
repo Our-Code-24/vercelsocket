@@ -60,7 +60,7 @@ Clients are working like this:
     <script src="/js"></script>
     <script>
         io().then((socket) => {
-        scoket.send("eventname", data)
+        socket.send("eventname", data)
         socket.bindto("eventname", function(data) {
             // Callback
         })
