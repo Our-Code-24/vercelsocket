@@ -18,7 +18,7 @@ async function io(app) {
   })
 
   app.get("/js", (req, res) => {
-    res.sendFile(__dirname + "/src/client.js")
+    res.sendFile(__dirname + "/client.js")
   })
 
   return {
