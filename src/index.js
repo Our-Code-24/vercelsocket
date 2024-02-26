@@ -7,7 +7,7 @@ let lastevent = {
 };
 let listeners = {};
 
-function io(app) {
+async function io(app) {
   app.get("/socket", (req, res) => {
     res.send(lastevent)
   })

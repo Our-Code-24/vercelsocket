@@ -10,9 +10,11 @@
 </body>
 <script src='/js'></script>
 <script>
-    const socket = io()
-    setTimeout(function() {
-        socket.send("test", "test")
-    }, 1000)
+    io().then((socket) => {
+    socket.send("test", "test")
+    socket.bindto("test", (data) => {
+        console.log("Pong!")
+    })
+    })
 </script>
 </html>

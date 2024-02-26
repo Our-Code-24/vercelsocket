@@ -1,10 +1,10 @@
 const socket = require("./src/index")
 const app = require("express")()
-const io = socket(app)
+socket(app).then((io) => {
 console.log("WORKS!")
 
 io.bindto("test", (data) => {
-    console.log(data)
+    io.send("test", "Pong!")
 })
 
 
@@ -17,3 +17,4 @@ app.get("/", (req, res) => {
 })
 
 app.listen(3000)
+})
