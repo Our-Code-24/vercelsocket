@@ -17,7 +17,7 @@ async function io(app) {
     res.sendStatus(200)
   })
 
-  app.get("/js", (req, res) => {
+  app.get("/socket/js", (req, res) => {
     res.sendFile(__dirname + "/client.js")
   })
 

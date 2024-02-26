@@ -26,7 +26,7 @@ Client:
     <body>
 
     </body>
-    <script src="/js"></script>
+    <script src="/socket/js"></script>
 </html>
 ```
 
@@ -57,7 +57,7 @@ Clients are working like this:
     <body>
 
     </body>
-    <script src="/js"></script>
+    <script src="/socket/js"></script>
     <script>
         io().then((socket) => {
         socket.send("eventname", data)
