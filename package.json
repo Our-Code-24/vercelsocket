@@ -1,0 +1,23 @@
+{
+  "name": "vercelsocket",
+  "version": "1.0.0",
+  "description": "A vercel socket software",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Our-Code-24/vercelsocket.git"
+  },
+  "author": "Stoppedwumm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Our-Code-24/vercelsocket/issues"
+  },
+  "homepage": "https://github.com/Our-Code-24/vercelsocket#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2"
+  }
+}
