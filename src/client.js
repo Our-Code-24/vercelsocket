@@ -10,8 +10,6 @@ async function io() {
                 listeners[data.eventname](data.data)
                 eventbuffer = data.eventname
                 }
-            } else {
-                
             }
         })
     }, 1000);
