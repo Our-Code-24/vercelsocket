@@ -17,6 +17,10 @@ async function io(app) {
     res.sendStatus(200)
   })
 
+  app.get("/js", (req, res) => {
+    res.sendFile(__dirname + "/src/client.js")
+  })
+
   return {
     "send": function(eventname, data) {
       lastevent = {
