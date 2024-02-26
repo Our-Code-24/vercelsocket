@@ -30,6 +30,19 @@ async function io(app) {
     },
     "bindto": function(eventname, callback) {
       listeners[eventname] = callback;
+    },
+    "resetevent": function() {
+      lastevent = {
+        "eventname": "undefined",
+        "data": "undefined"
+      };
+    },
+    "completereset": function() {
+      listeners = {}
+      lastevent = {
+        "eventname": "undefined",
+        "data": "undefined"
+      };
     }
   };
 }

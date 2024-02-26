@@ -1,4 +1,4 @@
-const listeners = []
+const listeners = {}
 let eventbuffer = "undefined"
 
 async function io() {
@@ -12,7 +12,7 @@ async function io() {
                 }
             }
         })
-    }, 1000);
+    }, 1000)
     return {
         "send": function(eventname, data) {
             if (eventname) {
