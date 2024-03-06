@@ -1,5 +1,6 @@
 const listeners = {}
 let eventbuffer = "undefined"
+const {v4: uuidv4} = require("uuid")
 
 async function io() {
     setInterval(() => {
@@ -25,8 +26,9 @@ async function io() {
         },
         "bindto": function(eventname, callback) {
             listeners[eventname] = callback
-        }
+        },
+        "id": uuidv4()
     }
-    functions.send("connect", "")
+    functions.send("connect", functions.id)
     return functions
 }
