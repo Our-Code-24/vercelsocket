@@ -26,7 +26,17 @@ Client:
     <body>
 
     </body>
-    <script src="/socket/js"></script>
+    <script src="/socket/js">
+    
+    </script>
+    <script>
+        io().then((socket) => {
+        window.onbeforeunload = () => {
+            socket.send("disconnect", "")
+        }
+        // Your script
+        })
+    </script>
 </html>
 ```
 
@@ -57,9 +67,14 @@ Clients are working like this:
     <body>
 
     </body>
-    <script src="/socket/js"></script>
+    <script src="/socket/js">
+        
+    </script>
     <script>
         io().then((socket) => {
+        window.onbeforeunload = () => {
+            socket.send("disconnect", "")
+        }
         socket.send("eventname", data)
         socket.bindto("eventname", function(data) {
             // Callback

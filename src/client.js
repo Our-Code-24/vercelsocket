@@ -28,8 +28,5 @@ async function io() {
         }
     }
     functions.send("connect", "")
-    window.onbeforeunload = () => {
-        socket.send("disconnect", "")
-    }
     return functions
 }
