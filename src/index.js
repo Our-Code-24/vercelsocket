@@ -13,15 +13,17 @@ function io(app) {
   })
 
   app.get("/socket/trigger", (req, res) => {
-    listeners[req.query["event"]](req.query["data"])
-    res.sendStatus(200)
+    if (listeners[req.query["event"]]) {
+      listeners[req.query["event"]](req.query["data"])
+      res.sendStatus(200)
+    }
   })
 
   app.get("/socket/js", (req, res) => {
     res.sendFile(__dirname + "/client.js")
   })
 
-  return {
+  functions = {
     "send": function(eventname, data) {
       lastevent = {
         "eventname": eventname,
@@ -44,7 +46,8 @@ function io(app) {
         "data": "undefined"
       };
     }
-  };
+  }
+  return functions;
 }
 
 module.exports = io;

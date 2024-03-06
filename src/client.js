@@ -13,7 +13,7 @@ async function io() {
             }
         })
     }, 1000)
-    return {
+    const functions = {
         "send": function(eventname, data) {
             if (eventname) {
                 fetch("/socket/trigger?event=" + eventname + "&data=" + data).then((res) => {
@@ -27,4 +27,9 @@ async function io() {
             listeners[eventname] = callback
         }
     }
+    functions.send("connect", "")
+    window.onbeforeunload = () => {
+        socket.send("disconnect", "")
+    }
+    return functions
 }
